@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Remotes_App_Translation_Project.tools;
 
 namespace Remotes_App_Translation_Project
 {
@@ -16,7 +17,8 @@ namespace Remotes_App_Translation_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            UserSettings.LoadSettings();
+            Application.Run(new TranslationsForm());
         }
     }
 }
