@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Remotes_App_Translation_Project.output;
 
@@ -8,18 +9,19 @@ namespace Remotes_App_Translation_Project
     {
         private TextBox appNameOutputCB;
         private TextBox summaryOutputCB;
-        private RichTextBox appDescriptionOutputRTB;
+        private TextBox appDescriptionOutputRTB;
         private string translationPath;
         private string userAppName, userEmail, userKeywords;
         private string APP_NAME_PREFIX = "Remote for ";
         private string APP_NAME_SUFFIX = " - NOW FREE";
+        public static string PLACE_HOLDER_APP_NAME = "(__+)";
 
         public OutputHandler(string translationPath)
         {
             this.translationPath = translationPath;
         }
 
-        public void SetOutputParams(TextBox appNameOutputTB, TextBox summaryOutputTB, RichTextBox appDescriptionOutputRTB)
+        public void SetOutputParams(TextBox appNameOutputTB, TextBox summaryOutputTB, TextBox appDescriptionOutputRTB)
         {
             this.appNameOutputCB = appNameOutputTB;
             this.summaryOutputCB = summaryOutputTB;
@@ -37,10 +39,11 @@ namespace Remotes_App_Translation_Project
         {
             ExcelParser excelParser = new ExcelParser();
             excelParser.LoadExcelFile(translationPath);
-            appNameOutputCB.Text = APP_NAME_PREFIX + userAppName + APP_NAME_SUFFIX;
+            //appNameOutputCB.Text = excelParser.OutputOutputAppName.Replace("____", userAppName);
+            appNameOutputCB.Text = Regex.Replace(excelParser.OutputOutputAppName, PLACE_HOLDER_APP_NAME, userAppName);
             summaryOutputCB.Text = appNameOutputCB.Text;
             summaryOutputCB.AppendText(Environment.NewLine);
-            summaryOutputCB.AppendText(excelParser.FetchAppSummary());
+            summaryOutputCB.AppendText(excelParser.AppSummary);
             appDescriptionOutputRTB.Text = excelParser.FetchAppDescription(userEmail, userKeywords, userAppName);
         }
     }

@@ -106,6 +106,11 @@ namespace Remotes_App_Translation_Project
             set => keywords = value;
         }
 
+        private void languagesCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(appNameTB.Text.Equals("") || developerMailTB.Text.Equals(""))return;
+            goBtn_Click(null, null);
+        }
 
         private void SetHints()
         {

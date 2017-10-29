@@ -13,7 +13,7 @@ namespace Remotes_App_Translation_Project.tools
         public static void LoadSettings()
         {
             TranslationsForm.DeveloperMail = Settings.Default.developerMail;
-            TranslationsForm.Keywords = Settings.Default.developerMail;
+            TranslationsForm.Keywords = Settings.Default.keywords;
         }
 
         public static void SaveSettings()

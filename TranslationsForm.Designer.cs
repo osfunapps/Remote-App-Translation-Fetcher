@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.Drawing;
+using System.Drawing.Text;
+using System.Windows.Forms;
 
 namespace Remotes_App_Translation_Project
 {
@@ -33,13 +35,13 @@ namespace Remotes_App_Translation_Project
             this.languagesCB = new System.Windows.Forms.ComboBox();
             this.appNameOutputTB = new System.Windows.Forms.TextBox();
             this.summaryOutputTB = new System.Windows.Forms.TextBox();
-            this.appDescriptionOutputRTB = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.keywordsTB = new System.Windows.Forms.RichTextBox();
             this.developerMailTB = new System.Windows.Forms.TextBox();
             this.appNameTB = new System.Windows.Forms.TextBox();
             this.goBtn = new System.Windows.Forms.Button();
+            this.appDescriptionOutputRTB = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -53,13 +55,14 @@ namespace Remotes_App_Translation_Project
             this.languagesCB.Name = "languagesCB";
             this.languagesCB.Size = new System.Drawing.Size(272, 21);
             this.languagesCB.TabIndex = 0;
+            this.languagesCB.SelectedIndexChanged += new System.EventHandler(this.languagesCB_SelectedIndexChanged);
             // 
             // appNameOutputTB
             // 
             this.appNameOutputTB.Enabled = false;
             this.appNameOutputTB.Location = new System.Drawing.Point(16, 29);
             this.appNameOutputTB.Name = "appNameOutputTB";
-            this.appNameOutputTB.Size = new System.Drawing.Size(192, 20);
+            this.appNameOutputTB.Size = new System.Drawing.Size(210, 20);
             this.appNameOutputTB.TabIndex = 2;
             // 
             // summaryOutputTB
@@ -71,20 +74,11 @@ namespace Remotes_App_Translation_Project
             this.summaryOutputTB.Size = new System.Drawing.Size(347, 39);
             this.summaryOutputTB.TabIndex = 3;
             // 
-            // appDescriptionOutputRTB
-            // 
-            this.appDescriptionOutputRTB.Enabled = false;
-            this.appDescriptionOutputRTB.Location = new System.Drawing.Point(15, 117);
-            this.appDescriptionOutputRTB.Name = "appDescriptionOutputRTB";
-            this.appDescriptionOutputRTB.Size = new System.Drawing.Size(348, 341);
-            this.appDescriptionOutputRTB.TabIndex = 4;
-            this.appDescriptionOutputRTB.Text = "";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.appDescriptionOutputRTB);
             this.groupBox1.Controls.Add(this.appNameOutputTB);
             this.groupBox1.Controls.Add(this.summaryOutputTB);
-            this.groupBox1.Controls.Add(this.appDescriptionOutputRTB);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.Location = new System.Drawing.Point(298, 51);
             this.groupBox1.Name = "groupBox1";
@@ -112,8 +106,8 @@ namespace Remotes_App_Translation_Project
             this.keywordsTB.Name = "keywordsTB";
             this.keywordsTB.Size = new System.Drawing.Size(233, 117);
             this.keywordsTB.TabIndex = 5;
-            this.keywordsTB.Text = "";
             this.keywordsTB.Tag = "Keywords. \n\nLike: \"TV Volume up volume down control india set top box\"";
+            this.keywordsTB.Text = "";
             // 
             // developerMailTB
             // 
@@ -141,6 +135,16 @@ namespace Remotes_App_Translation_Project
             this.goBtn.UseVisualStyleBackColor = true;
             this.goBtn.Click += new System.EventHandler(this.goBtn_Click);
             // 
+            // appDescriptionOutputRTB
+            // 
+            this.appDescriptionOutputRTB.Enabled = false;
+            this.appDescriptionOutputRTB.Location = new System.Drawing.Point(16, 117);
+            this.appDescriptionOutputRTB.Multiline = true;
+            this.appDescriptionOutputRTB.Name = "appDescriptionOutputRTB";
+            this.appDescriptionOutputRTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.appDescriptionOutputRTB.Size = new System.Drawing.Size(347, 337);
+            this.appDescriptionOutputRTB.TabIndex = 4;
+            // 
             // TranslationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,13 +170,13 @@ namespace Remotes_App_Translation_Project
         private System.Windows.Forms.ComboBox languagesCB;
         private System.Windows.Forms.TextBox appNameOutputTB;
         private System.Windows.Forms.TextBox summaryOutputTB;
-        private System.Windows.Forms.RichTextBox appDescriptionOutputRTB;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RichTextBox keywordsTB;
         private System.Windows.Forms.TextBox developerMailTB;
         private System.Windows.Forms.TextBox appNameTB;
         private System.Windows.Forms.Button goBtn;
+        private TextBox appDescriptionOutputRTB;
     }
 }
 
