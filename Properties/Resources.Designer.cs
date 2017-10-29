@@ -59,15 +59,5 @@ namespace Remotes_App_Translation_Project.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        internal static byte[] NotoSans_Black {
-            get {
-                object obj = ResourceManager.GetObject("NotoSans_Black", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
