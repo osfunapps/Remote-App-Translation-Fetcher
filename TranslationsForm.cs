@@ -126,6 +126,15 @@ namespace Remotes_App_Translation_Project
             hintsCreator.OnTBHint_Leave(appNameTB, null);
         }
 
+        private void OnTBSelectAll(object sender, KeyEventArgs e)
+        {
+            if (e.Control && (e.KeyCode == Keys.A))
+            {
+                if (sender != null)
+                    ((TextBox)sender).SelectAll();
+                e.Handled = true;
+            }
+        }
     }
 
 

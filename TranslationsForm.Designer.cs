@@ -73,6 +73,8 @@ namespace Remotes_App_Translation_Project
             this.summaryOutputTB.Name = "summaryOutputTB";
             this.summaryOutputTB.Size = new System.Drawing.Size(347, 39);
             this.summaryOutputTB.TabIndex = 3;
+            this.summaryOutputTB.KeyDown += new KeyEventHandler(OnTBSelectAll);
+
             // 
             // groupBox1
             // 
@@ -144,6 +146,8 @@ namespace Remotes_App_Translation_Project
             this.appDescriptionOutputRTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.appDescriptionOutputRTB.Size = new System.Drawing.Size(347, 337);
             this.appDescriptionOutputRTB.TabIndex = 4;
+            this.appDescriptionOutputRTB.KeyDown+= new KeyEventHandler(OnTBSelectAll);
+
             // 
             // TranslationsForm
             // 
