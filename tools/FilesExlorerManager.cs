@@ -8,11 +8,18 @@ namespace Remotes_App_Translation_Project
     internal class FilesExlorerManager
     {
         private string FOLDER_TRASNLATIONS = "Translations";
+        private string FOLDER_AC_TRASNLATIONS = "ac translations";
 
-        public Dictionary<string, string> ExtractFilesNamesList()
+        public Dictionary<string, string> ExtractFilesNamesList(bool acRemote)
         {
             string currentFolder = System.IO.Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-            var translationsFolder = currentFolder.Substring(0, currentFolder.IndexOf("bin"))+FOLDER_TRASNLATIONS;
+            string translationsFolder;
+
+            if (acRemote)
+            translationsFolder = currentFolder.Substring(0, currentFolder.IndexOf("bin"))+FOLDER_AC_TRASNLATIONS;
+            else
+                translationsFolder = currentFolder.Substring(0, currentFolder.IndexOf("bin")) + FOLDER_TRASNLATIONS;
+
             Dictionary<string, string> languagesDict = new Dictionary<string, string>();
             string[] files = Directory.GetFiles(translationsFolder);
 

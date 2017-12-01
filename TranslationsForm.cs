@@ -17,6 +17,7 @@ namespace Remotes_App_Translation_Project
     {
         private HintsCreator hintsCreator;
         private static string developerMail, keywords;
+        private static bool _acRemotes;
 
         //finals
         private string DEFAULT_LANGUAGE = "English";
@@ -34,8 +35,9 @@ namespace Remotes_App_Translation_Project
 
         private void FillTranslationsCB()
         {
+            languagesCB.Items.Clear();
             FilesExlorerManager filesMgr = new FilesExlorerManager();
-            languagesDict = filesMgr.ExtractFilesNamesList();
+            languagesDict = filesMgr.ExtractFilesNamesList(acRemotesCB.Checked);
             string[] languagesNames = languagesDict.Keys.ToArray();
             Array.Sort(languagesNames);
             foreach (var language in languagesNames)
@@ -86,9 +88,9 @@ namespace Remotes_App_Translation_Project
         {
             developerMail = developerMailTB.Text;
             keywords = keywordsTB.Text;
-            Settings.Default.acRemotes = acRemotesCB.Checked;
-            
+            _acRemotes = acRemotesCB.Checked;
             UserSettings.SaveSettings();
+            
         }
 
         private void EnableFields(bool enable)
@@ -113,6 +115,7 @@ namespace Remotes_App_Translation_Project
 
         private void languagesCB_SelectedIndexChanged(object sender, EventArgs e)
         {
+            SaveParams();
             if(appNameTB.Text.Equals("") || developerMailTB.Text.Equals(""))return;
             goBtn_Click(null, null);
         }
@@ -136,6 +139,11 @@ namespace Remotes_App_Translation_Project
 
         }
 
+        private void acRemotesCB_CheckedChanged(object sender, EventArgs e)
+        {
+            FillTranslationsCB();
+        }
+
         private void OnTBSelectAll(object sender, KeyEventArgs e)
         {
             if (e.Control && (e.KeyCode == Keys.A))
@@ -145,6 +153,13 @@ namespace Remotes_App_Translation_Project
                 e.Handled = true;
             }
         }
+
+        public static bool AcRemotes
+        {
+            get => _acRemotes;
+            set => _acRemotes = value;
+        }
+
     }
 
 

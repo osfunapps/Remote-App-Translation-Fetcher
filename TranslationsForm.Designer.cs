@@ -141,7 +141,7 @@ namespace Remotes_App_Translation_Project
             // 
             // goBtn
             // 
-            this.goBtn.Location = new System.Drawing.Point(29, 435);
+            this.goBtn.Location = new System.Drawing.Point(29, 316);
             this.goBtn.Name = "goBtn";
             this.goBtn.Size = new System.Drawing.Size(233, 70);
             this.goBtn.TabIndex = 8;
@@ -152,12 +152,13 @@ namespace Remotes_App_Translation_Project
             // acRemotesCB
             // 
             this.acRemotesCB.AutoSize = true;
-            this.acRemotesCB.Location = new System.Drawing.Point(29, 322);
+            this.acRemotesCB.Location = new System.Drawing.Point(12, 12);
             this.acRemotesCB.Name = "acRemotesCB";
             this.acRemotesCB.Size = new System.Drawing.Size(80, 17);
             this.acRemotesCB.TabIndex = 9;
             this.acRemotesCB.Text = "AC Remote";
             this.acRemotesCB.UseVisualStyleBackColor = true;
+            this.acRemotesCB.CheckedChanged += new System.EventHandler(this.acRemotesCB_CheckedChanged);
             // 
             // TranslationsForm
             // 

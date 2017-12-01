@@ -14,6 +14,8 @@ namespace Remotes_App_Translation_Project.tools
         {
             TranslationsForm.DeveloperMail = Settings.Default.developerMail;
             TranslationsForm.Keywords = Settings.Default.keywords;
+            TranslationsForm.AcRemotes = Settings.Default.acRemotes;
+
         }
 
         public static void SaveSettings()
@@ -21,6 +23,7 @@ namespace Remotes_App_Translation_Project.tools
             Settings.Default.Upgrade(); 
             Settings.Default.developerMail = TranslationsForm.DeveloperMail;
             Settings.Default.keywords = TranslationsForm.Keywords;
+            Settings.Default.acRemotes = TranslationsForm.AcRemotes;
             Settings.Default.Save();
         }
     }
