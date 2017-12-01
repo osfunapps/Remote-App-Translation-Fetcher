@@ -36,12 +36,13 @@ namespace Remotes_App_Translation_Project
             this.appNameOutputTB = new System.Windows.Forms.TextBox();
             this.summaryOutputTB = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.appDescriptionOutputRTB = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.keywordsTB = new System.Windows.Forms.RichTextBox();
             this.developerMailTB = new System.Windows.Forms.TextBox();
             this.appNameTB = new System.Windows.Forms.TextBox();
             this.goBtn = new System.Windows.Forms.Button();
-            this.appDescriptionOutputRTB = new System.Windows.Forms.TextBox();
+            this.acRemotesCB = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -64,6 +65,7 @@ namespace Remotes_App_Translation_Project
             this.appNameOutputTB.Name = "appNameOutputTB";
             this.appNameOutputTB.Size = new System.Drawing.Size(210, 20);
             this.appNameOutputTB.TabIndex = 2;
+            this.appNameOutputTB.TextChanged += new System.EventHandler(this.appNameOutputTB_TextChanged);
             // 
             // summaryOutputTB
             // 
@@ -73,8 +75,7 @@ namespace Remotes_App_Translation_Project
             this.summaryOutputTB.Name = "summaryOutputTB";
             this.summaryOutputTB.Size = new System.Drawing.Size(347, 39);
             this.summaryOutputTB.TabIndex = 3;
-            this.summaryOutputTB.KeyDown += new KeyEventHandler(OnTBSelectAll);
-
+            this.summaryOutputTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnTBSelectAll);
             // 
             // groupBox1
             // 
@@ -88,6 +89,17 @@ namespace Remotes_App_Translation_Project
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Output";
+            // 
+            // appDescriptionOutputRTB
+            // 
+            this.appDescriptionOutputRTB.Enabled = false;
+            this.appDescriptionOutputRTB.Location = new System.Drawing.Point(16, 117);
+            this.appDescriptionOutputRTB.Multiline = true;
+            this.appDescriptionOutputRTB.Name = "appDescriptionOutputRTB";
+            this.appDescriptionOutputRTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.appDescriptionOutputRTB.Size = new System.Drawing.Size(347, 337);
+            this.appDescriptionOutputRTB.TabIndex = 4;
+            this.appDescriptionOutputRTB.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnTBSelectAll);
             // 
             // groupBox2
             // 
@@ -129,7 +141,7 @@ namespace Remotes_App_Translation_Project
             // 
             // goBtn
             // 
-            this.goBtn.Location = new System.Drawing.Point(29, 326);
+            this.goBtn.Location = new System.Drawing.Point(29, 435);
             this.goBtn.Name = "goBtn";
             this.goBtn.Size = new System.Drawing.Size(233, 70);
             this.goBtn.TabIndex = 8;
@@ -137,23 +149,22 @@ namespace Remotes_App_Translation_Project
             this.goBtn.UseVisualStyleBackColor = true;
             this.goBtn.Click += new System.EventHandler(this.goBtn_Click);
             // 
-            // appDescriptionOutputRTB
+            // acRemotesCB
             // 
-            this.appDescriptionOutputRTB.Enabled = false;
-            this.appDescriptionOutputRTB.Location = new System.Drawing.Point(16, 117);
-            this.appDescriptionOutputRTB.Multiline = true;
-            this.appDescriptionOutputRTB.Name = "appDescriptionOutputRTB";
-            this.appDescriptionOutputRTB.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.appDescriptionOutputRTB.Size = new System.Drawing.Size(347, 337);
-            this.appDescriptionOutputRTB.TabIndex = 4;
-            this.appDescriptionOutputRTB.KeyDown+= new KeyEventHandler(OnTBSelectAll);
-
+            this.acRemotesCB.AutoSize = true;
+            this.acRemotesCB.Location = new System.Drawing.Point(29, 322);
+            this.acRemotesCB.Name = "acRemotesCB";
+            this.acRemotesCB.Size = new System.Drawing.Size(80, 17);
+            this.acRemotesCB.TabIndex = 9;
+            this.acRemotesCB.Text = "AC Remote";
+            this.acRemotesCB.UseVisualStyleBackColor = true;
             // 
             // TranslationsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 535);
+            this.Controls.Add(this.acRemotesCB);
             this.Controls.Add(this.goBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -166,6 +177,7 @@ namespace Remotes_App_Translation_Project
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -181,6 +193,7 @@ namespace Remotes_App_Translation_Project
         private System.Windows.Forms.TextBox appNameTB;
         private System.Windows.Forms.Button goBtn;
         private TextBox appDescriptionOutputRTB;
+        private CheckBox acRemotesCB;
     }
 }
 

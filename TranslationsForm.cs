@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Remotes_App_Translation_Project.Properties;
 using Remotes_App_Translation_Project.tools;
 
 namespace Remotes_App_Translation_Project
@@ -52,6 +53,8 @@ namespace Remotes_App_Translation_Project
             keywordsTB.Text = Keywords;
                 keywordsTB.ForeColor = Color.Black;
             }
+
+            acRemotesCB.Checked = Settings.Default.acRemotes;
         }
 
         internal void OnTBHintLeave(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace Remotes_App_Translation_Project
         private void PrepareOutput()
         {
             OutputHandler outputHandler = new OutputHandler(languagesDict[languagesCB.Text]);
-            outputHandler.SetInputParams(appNameTB.Text, developerMailTB.Text, keywordsTB.Text);
+            outputHandler.SetInputParams(acRemotesCB.Checked,appNameTB.Text, developerMailTB.Text, keywordsTB.Text);
             outputHandler.SetOutputParams(appNameOutputTB, summaryOutputTB, appDescriptionOutputRTB);
             outputHandler.FetchData();
         }
@@ -83,6 +86,8 @@ namespace Remotes_App_Translation_Project
         {
             developerMail = developerMailTB.Text;
             keywords = keywordsTB.Text;
+            Settings.Default.acRemotes = acRemotesCB.Checked;
+            
             UserSettings.SaveSettings();
         }
 
@@ -124,6 +129,11 @@ namespace Remotes_App_Translation_Project
             hintsCreator.OnRTBHint_Leave(keywordsTB, null);
             hintsCreator.OnTBHint_Leave(developerMailTB, null);
             hintsCreator.OnTBHint_Leave(appNameTB, null);
+        }
+
+        private void appNameOutputTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void OnTBSelectAll(object sender, KeyEventArgs e)

@@ -12,8 +12,9 @@ namespace Remotes_App_Translation_Project
         private TextBox appDescriptionOutputRTB;
         private string translationPath;
         private string userAppName, userEmail, userKeywords;
-        private string APP_NAME_PREFIX = "Remote for ";
+        private string appNamePrefix = "Remote for ";
         private string APP_NAME_SUFFIX = " - NOW FREE";
+        private string AC_NAME_PREFIX = "AC ";
         public static string PLACE_HOLDER_APP_NAME = "(__+)";
 
         public OutputHandler(string translationPath)
@@ -28,8 +29,10 @@ namespace Remotes_App_Translation_Project
             this.appDescriptionOutputRTB = appDescriptionOutputRTB;
         }
 
-        public void SetInputParams(string userAppName, string userEmail, string userKeywords)
+        public void SetInputParams(bool acRemote, string userAppName, string userEmail, string userKeywords)
         {
+            if (acRemote)
+                appNamePrefix = AC_NAME_PREFIX + appNamePrefix;
             this.userAppName = userAppName;
             this.userEmail = userEmail;
             this.userKeywords = userKeywords;

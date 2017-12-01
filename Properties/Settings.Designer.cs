@@ -46,5 +46,17 @@ namespace Remotes_App_Translation_Project.Properties {
                 this["keywords"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool acRemotes {
+            get {
+                return ((bool)(this["acRemotes"]));
+            }
+            set {
+                this["acRemotes"] = value;
+            }
+        }
     }
 }
