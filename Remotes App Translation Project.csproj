@@ -80,6 +80,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ac translations\Danish.xlsx" />
+    <None Include="ac translations\English.xlsx" />
+    <None Include="ac translations\French.xlsx" />
+    <None Include="ac translations\German.xlsx" />
+    <None Include="ac translations\Hindi.xlsx" />
+    <None Include="ac translations\Italian.xlsx" />
+    <None Include="ac translations\Korean.xlsx" />
+    <None Include="ac translations\Polish.xlsx" />
+    <None Include="ac translations\Romanian.xlsx" />
+    <None Include="ac translations\Spanish.xlsx" />
+    <None Include="ac translations\Ukrainian.xlsx" />
     <None Include="Properties\NotoSans-Black.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
