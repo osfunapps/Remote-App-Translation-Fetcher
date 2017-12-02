@@ -91,6 +91,7 @@
     <None Include="ac translations\Romanian.xlsx" />
     <None Include="ac translations\Spanish.xlsx" />
     <None Include="ac translations\Ukrainian.xlsx" />
+    <None Include="exe\Release.rar" />
     <None Include="Properties\NotoSans-Black.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
