@@ -63,7 +63,7 @@ namespace Remotes_App_Translation_Project
             this.appNameOutputTB.Enabled = false;
             this.appNameOutputTB.Location = new System.Drawing.Point(16, 29);
             this.appNameOutputTB.Name = "appNameOutputTB";
-            this.appNameOutputTB.Size = new System.Drawing.Size(210, 20);
+            this.appNameOutputTB.Size = new System.Drawing.Size(285, 20);
             this.appNameOutputTB.TabIndex = 2;
             this.appNameOutputTB.TextChanged += new System.EventHandler(this.appNameOutputTB_TextChanged);
             // 

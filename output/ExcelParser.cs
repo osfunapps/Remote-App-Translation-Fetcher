@@ -18,6 +18,11 @@ namespace Remotes_App_Translation_Project.output
             Sheet sheet = workbook.Sheets[0];
             int rows = workbook.Sheets[0].Data.Rows.Count;
             appDescription = (string)sheet[rows, 2].Value;
+            if(appDescription == null)
+                appDescription = (string)sheet[rows-1, 2].Value;
+            if (appDescription == null)
+                appDescription = (string)sheet[rows - 2, 2].Value;
+
             outputOutputAppName = (string) sheet[3, 2].Value;
             appSummary = (string) sheet[4, 2].Value;
         }
