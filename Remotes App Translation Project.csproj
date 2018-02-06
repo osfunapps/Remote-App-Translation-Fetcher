@@ -80,16 +80,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ac translations\Chinese.xlsx" />
     <None Include="ac translations\Danish.xlsx" />
     <None Include="ac translations\English.xlsx" />
     <None Include="ac translations\French.xlsx" />
     <None Include="ac translations\German.xlsx" />
+    <None Include="ac translations\Greek.xlsx" />
     <None Include="ac translations\Hindi.xlsx" />
+    <None Include="ac translations\Indonesian.xlsx" />
     <None Include="ac translations\Italian.xlsx" />
     <None Include="ac translations\Korean.xlsx" />
+    <None Include="ac translations\Malay.xlsx" />
     <None Include="ac translations\Polish.xlsx" />
+    <None Include="ac translations\Portuguese.xlsx" />
     <None Include="ac translations\Romanian.xlsx" />
+    <None Include="ac translations\Russian.xlsx" />
     <None Include="ac translations\Spanish.xlsx" />
+    <None Include="ac translations\Turkish.xlsx" />
     <None Include="ac translations\Ukrainian.xlsx" />
     <None Include="exe\Release.rar" />
     <None Include="Properties\NotoSans-Black.ttf" />
@@ -103,16 +110,24 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Translations\Arabic.xlsx" />
+    <None Include="Translations\Chinese.xlsx" />
     <None Include="Translations\Danish.xlsx" />
     <None Include="Translations\English.xlsx" />
     <None Include="Translations\French.xlsx" />
     <None Include="Translations\German.xlsx" />
+    <None Include="Translations\Greek.xlsx" />
     <None Include="Translations\Hindi.xlsx" />
+    <None Include="Translations\Indonesian.xlsx" />
     <None Include="Translations\Italian.xlsx" />
     <None Include="Translations\Korean.xlsx" />
+    <None Include="Translations\Malay.xlsx" />
     <None Include="Translations\Polish.xlsx" />
+    <None Include="Translations\Portuguese.xlsx" />
     <None Include="Translations\Romanian.xlsx" />
+    <None Include="Translations\Russian.xlsx" />
     <None Include="Translations\Spanish.xlsx" />
+    <None Include="Translations\Turkish.xlsx" />
     <None Include="Translations\Ukrainian.xlsx" />
   </ItemGroup>
   <ItemGroup>
