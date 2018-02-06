@@ -16,6 +16,7 @@ namespace Remotes_App_Translation_Project
         private string APP_NAME_SUFFIX = " - NOW FREE";
         private string AC_NAME_PREFIX = "AC ";
         public static string PLACE_HOLDER_APP_NAME = "(__+)";
+        
 
         public OutputHandler(string translationPath)
         {

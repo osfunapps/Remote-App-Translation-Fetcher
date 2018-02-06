@@ -43,6 +43,11 @@ namespace Remotes_App_Translation_Project.output
             modifiedDescription = modifiedDescription.Replace(" contact us on _____", "contact us on " + userEmail);
 
             modifiedDescription = Regex.Replace(modifiedDescription, OutputHandler.PLACE_HOLDER_APP_NAME,  userAppName);
+
+            int lastIndex = modifiedDescription.LastIndexOf(userAppName);
+            string str = modifiedDescription.Substring(0, lastIndex);
+            modifiedDescription = str + userEmail;
+            
             //modifiedDescription = modifiedDescription.Replace("____", userAppName);
             modifiedDescription += "\n" + userKeywords;
             modifiedDescription = modifiedDescription.Replace("\n", "\r\n");
@@ -60,7 +65,23 @@ namespace Remotes_App_Translation_Project.output
             get => appSummary;
             set => appSummary = value;
         }
+
+
+        public static string ReplaceLastOccurrence(string Source, string Find, string Replace)
+        {
+            int place = Source.LastIndexOf(Find);
+
+            if (place == -1)
+                return Source;
+
+            string result = Source.Remove(place, Find.Length).Insert(place, Replace);
+            return result;
+        }
     }
+
+
+  
+
 
 
 }
